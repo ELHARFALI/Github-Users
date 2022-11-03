@@ -5,45 +5,45 @@ import { GoRepo, GoGist } from 'react-icons/go';
 import { FiUsers, FiUserPlus } from 'react-icons/fi';
 
 const UserInfo = () => {
-  const { githubUser } = React.useContext(GithubContext)
-  const { public_repos, followers, following, public_gists } = githubUser
-  
+  const { githubUser } = React.useContext(GithubContext);
+  const { public_repos, followers, following, public_gists } = githubUser;
+
   const items = [
     {
       id: 1,
-      icon: <GoRepo className="icons" />,
-      label: "repos",
+      icon: <GoRepo className='icon' />,
+      label: 'repos',
       value: public_repos,
-      color: "pink",
+      color: 'pink',
     },
     {
       id: 2,
-      icon: <FiUsers className="icons" />,
-      label: "follwoers",
+      icon: <FiUsers className='icon' />,
+      label: 'followers',
       value: followers,
-      color: "green",
+      color: 'green',
     },
     {
       id: 3,
-      icon: <FiUserPlus className="icons" />,
-      label: "following",
+      icon: <FiUserPlus className='icon' />,
+      label: 'following',
       value: following,
-      color: "purple",
+      color: 'purple',
     },
     {
       id: 4,
-      icon: <GoGist className="icons" />,
-      label: "gists",
+      icon: <GoGist className='icon' />,
+      label: 'gists',
       value: public_gists,
-      color: "yellow",
+      color: 'yellow',
     },
   ];
-  
+
   return (
-    <section className="section">
-      <Wrapper className="section-center">
+    <section className='section'>
+      <Wrapper className='section-center'>
         {items.map((item) => {
-          return <Item key={item.id} {...item} />;
+          return <Item key={item.id} {...item}></Item>;
         })}
       </Wrapper>
     </section>
@@ -59,8 +59,8 @@ const Item = ({ icon, label, value, color }) => {
         <p>{label}</p>
       </div>
     </article>
-  )
-}
+  );
+};
 
 const Wrapper = styled.section`
   display: grid;
